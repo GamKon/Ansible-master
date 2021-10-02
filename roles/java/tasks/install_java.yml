@@ -1,0 +1,16 @@
+---
+- name: for Debian family installing must have packages
+  apt: 
+    name: " {{ java_version }} " 
+    state: latest 
+    update_cache: yes
+  when: ansible_os_family == "Debian"
+  tags: installation
+
+- name: for Redhat family installing must have packages
+  yum: 
+    name: " {{ java_version }} "
+    state: latest 
+    update_cache: yes
+  when: ansible_os_family == "Redhat"
+  tags: installation

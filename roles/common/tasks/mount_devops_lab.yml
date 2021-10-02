@@ -1,0 +1,18 @@
+---
+- name: Create a directory share
+  ansible.builtin.file:
+    path: /share
+    state: directory
+    mode: '0755'
+
+- name: Create a directory devops_lab
+  ansible.builtin.file:
+    path: /home/gamkon/devops_lab
+    state: directory
+    mode: '0755'
+
+- name: Add to fstab mount devops_lab
+  ansible.builtin.shell: "echo 'devops_lab /home/gamkon/devops_lab vboxsf defaults 0 1' >> /etc/fstab"
+
+- name: remount fstab
+  ansible.builtin.command: mount -a

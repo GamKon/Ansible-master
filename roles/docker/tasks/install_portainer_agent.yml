@@ -1,0 +1,6 @@
+- name: install portainer agent
+  ansible.builtin.shell: docker login -u docker -p {{ lookup('env', 'DOCKER_PASSWORD') }} nexus-srv:8082 && docker run -d -p 9001:9001 --name portainer_agent --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/volumes:/var/lib/docker/volumes nexus-srv:8082/portainer/agent
+    ##cmd: "docker login -u docker -p inmAtion nexus-srv:8082 && docker run -d -p 9001:9001 --name portainer_agent --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/volumes:/var/lib/docker/volumes nexus-srv:8082/portainer/agent"
+    ##cmd: docker login -u docker -password-stdin nexus-srv:8082 && docker run -d -p 9001:9001 --name portainer_agent --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/volumes:/var/lib/docker/volumes nexus-srv:8082/portainer/agent
+  ignore_errors: yes
+  tags: portainer_agent

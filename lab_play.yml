@@ -1,0 +1,50 @@
+---
+- hosts: vms
+  become: yes
+  roles:
+    - common
+  tags:
+    vms
+
+- hosts: dockers
+  become: yes
+  roles:
+ #   - common
+    - docker
+  tags:
+    dockers
+
+- hosts: dockerhost
+  become: yes
+  roles:
+#    - common
+#    - docker
+    - java
+  tags:
+    java
+
+- hosts: development
+  become: yes
+  roles:
+#    - common
+#    - devenv
+#    - docker
+#    - aws_cli2
+  tags: 
+    dev
+
+- hosts: nexushost
+  become: yes
+  roles:
+#    - common
+#    - docker
+    - nexus
+  tags: nexus
+
+- hosts: jenkins
+  become: yes
+  roles:
+#    - common
+#    - docker
+#    - nexus
+  tags: jenkins

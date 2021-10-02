@@ -1,0 +1,6 @@
+[default]
+region = ca-central-1
+output = json
+[profile s3_access]
+region = ca-central-1
+output = json

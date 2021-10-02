@@ -1,0 +1,11 @@
+---
+# tasks file for nexus
+- name: creating nexus_data for storing images
+  ansible.builtin.file:
+    path: /nexus-data
+    state: directory
+    owner: 200
+    recurse: yes  
+
+#- name: set permisions for nexus_data
+#  ansible.builtin.command: chown -R 200 /nexus-data

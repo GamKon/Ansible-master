@@ -1,0 +1,12 @@
+- name: "Copy hosts file"
+  template: src=hosts.j2 dest="/etc/hosts"
+  tags: config
+
+- name: "Copy netplan config"
+  template: src=netplan_00-installer-config.j2 dest="/etc/netplan/00-installer-config.yaml"
+  notify: 
+    - netplan_apply
+  tags: config
+   
+- name: Flush handlers
+  meta: flush_handlers

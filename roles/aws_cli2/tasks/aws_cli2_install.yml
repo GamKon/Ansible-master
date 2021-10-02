@@ -1,0 +1,19 @@
+#name: Installing AWS cli2
+
+- name: "Copy .aws credentials"
+  template: 
+    src: credentials
+    dest: "/home/gamkon/.aws/"
+  tags: aws_cli_conf
+
+- name: "Copy .aws config"
+  template:
+    src: config
+    dest: "/home/gamkon/.aws/"
+  tags: aws_cli_conf
+
+- name: "Docker login command"
+  ansible.builtin.shell:
+    cmd: "aws ecr get-login-password --region ca-central-1 | \
+sudo docker login --username AWS --password-stdin \
+442647584880.dkr.ecr.ca-central-1.amazonaws.com"

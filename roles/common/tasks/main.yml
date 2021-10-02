@@ -1,0 +1,5 @@
+---
+# tasks file for common
+- include: system_configuration.yml
+- include: install_packages.yml
+#- include: mount_folders.yml

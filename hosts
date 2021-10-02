@@ -1,0 +1,30 @@
+[master]
+master-srv ip_num=115
+
+[dockerhost]
+docker-srv ip_num=116
+
+[development]
+dev-srv ip_num=117
+
+[nexushost]
+nexus-srv ip_num=118
+
+[jenkins]
+jenkins-srv ip_num=119
+
+[dockers:children]
+development
+nexushost
+dockerhost
+jenkins
+
+[vms:children]
+master
+dockerhost
+development
+nexushost
+jenkins
+
+[java:children]
+dockerhost

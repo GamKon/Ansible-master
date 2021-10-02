@@ -1,0 +1,18 @@
+- name: Ensure docker latest is installed
+  apt: 
+    name: ['docker.io','docker-compose'] 
+    state: latest 
+#    update_cache: yes
+  tags: installation
+
+- name: "Copy daemon.json"
+  template: src=daemon.j2 dest="/etc/docker/daemon.json"
+  notify: restart_dockerd
+  tags: config
+    
+
+- name: Ensure docker is running
+  service:
+    name: docker
+    state: started
+  tags: docker

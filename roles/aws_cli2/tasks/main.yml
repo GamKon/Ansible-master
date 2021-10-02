@@ -1,0 +1,4 @@
+---
+# tasks file for ./roles/aws_cli2
+- include: aws_cli2_install.yml
+
