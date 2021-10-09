@@ -12,7 +12,7 @@
     mode: '0755'
 
 - name: Add to fstab mount devops_lab
-  ansible.builtin.shell: "echo 'devops_lab /home/gamkon/devops_lab vboxsf defaults 0 1' >> /etc/fstab"
+  ansible.builtin.shell: "echo 'Projects /home/gamkon/devops_lab vboxsf defaults 0 1' >> /etc/fstab"
 
 - name: remount fstab
   ansible.builtin.command: mount -a

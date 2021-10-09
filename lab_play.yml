@@ -27,7 +27,6 @@
   become: yes
   roles:
 #    - common
-#    - devenv
 #    - docker
 #    - aws_cli2
   tags: 

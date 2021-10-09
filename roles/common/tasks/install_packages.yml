@@ -3,14 +3,18 @@
   apt: 
     name: ['mc','apache2-utils','net-tools']
     state: latest 
-    update_cache: yes
+    update_cache: true
   when: ansible_os_family == "Debian"
+  async: 45
+  poll: 5
   tags: installation
 
 - name: for Redhat family installing must have packages
   yum: 
     name: ['mc','apache2-utils','net-tools']
     state: latest 
-    update_cache: yes
+    update_cache: false
   when: ansible_os_family == "Redhat"
+  async: 45
+  poll: 5
   tags: installation
