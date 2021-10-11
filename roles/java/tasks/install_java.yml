@@ -5,6 +5,8 @@
     state: latest 
     update_cache: yes
   when: ansible_os_family == "Debian"
+  async: 300
+  poll: 5
   tags: installation
 
 - name: for Redhat family installing must have packages
@@ -13,4 +15,6 @@
     state: latest 
     update_cache: yes
   when: ansible_os_family == "Redhat"
+  async: 300
+  poll: 5
   tags: installation

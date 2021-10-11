@@ -28,3 +28,4 @@ jenkins
 
 [java:children]
 dockerhost
+development

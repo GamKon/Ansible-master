@@ -1,11 +1,11 @@
 ---
 - name: for Debian family installing must have packages
   apt: 
-    name: ['mc','apache2-utils','net-tools']
+    name: ['mc','apache2-utils','net-tools','python3']
     state: latest 
     update_cache: true
   when: ansible_os_family == "Debian"
-  async: 45
+  async: 300
   poll: 5
   tags: installation
 
@@ -15,6 +15,6 @@
     state: latest 
     update_cache: false
   when: ansible_os_family == "Redhat"
-  async: 45
+  async:300
   poll: 5
   tags: installation

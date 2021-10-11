@@ -29,6 +29,7 @@
 #    - common
 #    - docker
 #    - aws_cli2
+    - java
   tags: 
     dev
 
