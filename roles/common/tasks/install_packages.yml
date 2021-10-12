@@ -15,6 +15,6 @@
     state: latest 
     update_cache: false
   when: ansible_os_family == "Redhat"
-  async:300
+  async: 300
   poll: 5
   tags: installation
