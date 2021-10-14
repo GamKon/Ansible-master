@@ -5,16 +5,16 @@
     state: latest 
     update_cache: true
   when: ansible_os_family == "Debian"
-  async: 300
+  async: 600
   poll: 5
   tags: installation
 
 - name: for Redhat family installing must have packages
   yum: 
-    name: ['mc','apache2-utils','net-tools']
+    name: ['mc','apache2-utils','net-tools','python3']
     state: latest 
     update_cache: false
   when: ansible_os_family == "Redhat"
-  async: 300
+  async: 600
   poll: 5
   tags: installation

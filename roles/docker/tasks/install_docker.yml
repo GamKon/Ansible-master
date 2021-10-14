@@ -3,7 +3,7 @@
     name: ['docker.io','docker-compose'] 
     state: latest 
 #    update_cache: yes
-  async: 300
+  async: 600
   poll: 5
   tags: installation
 
@@ -11,10 +11,19 @@
   template: src=daemon.j2 dest="/etc/docker/daemon.json"
   notify: restart_dockerd
   tags: config
-    
 
 - name: Ensure docker is running
   service:
     name: docker
     state: started
+  tags: docker
+
+- name: Setting permisions to docker.sock
+  file:
+    path: /var/run/docker.sock
+    mode: '666' 
+  tags: docker
+
+- name: Adding user gamkon to docker group
+  command: usermod gamkon -aG docker
   tags: docker

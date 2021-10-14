@@ -5,3 +5,13 @@
     - common
   tags:
     vms
+
+- hosts: development
+  become: yes
+  roles:
+#    - common
+    - docker
+#    - aws_cli2
+    - java
+  tags: 
+    dev
