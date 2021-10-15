@@ -1,2 +1,5 @@
 *.private
+*.cfg
+*.cfg.orig
+dynamic_inventory_aws_ec2.yml
 
