@@ -1,6 +1,6 @@
 # vars file for common
 net_ip: '192.168.43'
-gateway_ip: '192.168.43.69'
+gateway_ip: '192.168.43.84'
 t14_ip: '192.168.43.199'
 
 

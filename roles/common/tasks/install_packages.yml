@@ -1,7 +1,7 @@
 ---
 - name: for Debian family installing must have packages
   apt: 
-    name: ['mc','apache2-utils','net-tools','python3']
+    name: ['mc','apache2-utils','net-tools','python3','python3-pip']
     state: latest 
     update_cache: true
   when: ansible_os_family == "Debian"
@@ -11,7 +11,7 @@
 
 - name: for Redhat family installing must have packages
   yum: 
-    name: ['mc','apache2-utils','net-tools','python3']
+    name: ['mc','apache2-utils','net-tools','python3','python3-pip']
     state: latest 
     update_cache: false
   when: ansible_os_family == "Redhat"

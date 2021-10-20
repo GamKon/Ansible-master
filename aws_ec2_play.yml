@@ -1,5 +1,5 @@
 ---
-- name: Ansible Test Playbook
+- name: Ansible AWS Playbook
   gather_facts: false
   hosts: aws_region_ca_central_1
   tasks:
